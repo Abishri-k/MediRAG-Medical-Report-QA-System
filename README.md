@@ -1,168 +1,112 @@
-# MediRAG: AI-Powered Medical Report Question Answering System Using Retrieval-Augmented Generation (RAG)
+# 🩺 MediRAG
 
-## Overview
+### AI-Powered Medical Report Question Answering System using Retrieval-Augmented Generation (RAG)
 
-MediRAG is an AI-powered Medical Report Question Answering System that leverages the Retrieval-Augmented Generation (RAG) framework to provide context-aware answers from uploaded medical reports. The application enables users to upload PDF medical documents and interact with them through natural language questions.
+MediRAG is a Retrieval-Augmented Generation (RAG) application that enables users to upload medical reports in PDF format and ask questions in natural language. The system retrieves the most relevant information from the uploaded report using semantic search and generates context-aware responses with the Groq Llama 3 Large Language Model.
 
-The system combines semantic document retrieval with the Groq Llama 3 Large Language Model to generate accurate and relevant responses based solely on the uploaded medical report. By integrating modern Natural Language Processing (NLP) techniques with vector search, MediRAG improves information accessibility while minimizing AI hallucinations.
-
-This project was developed as part of the **Software Development Using Generative AI** course.
+Developed using **Python**, **Streamlit**, **LangChain**, **FAISS**, **Sentence Transformers**, and the **Groq API**, the application demonstrates the integration of Large Language Models with vector-based information retrieval for document question answering.
 
 ---
 
-# Objectives
+## ✨ Features
 
-- Develop an AI-powered question answering system for medical reports.
-- Extract textual information from PDF documents.
-- Generate semantic embeddings using Sentence Transformers.
-- Store document embeddings using the FAISS vector database.
-- Retrieve contextually relevant information using semantic similarity search.
-- Generate accurate answers using the Groq Llama 3 Large Language Model.
-- Provide an intuitive and interactive Streamlit-based user interface.
-
----
-
-# Key Features
-
-- Upload medical reports in PDF format
-- Automatic PDF text extraction
-- Recursive text chunking using LangChain
-- Semantic embedding generation
-- High-speed vector search using FAISS
-- Retrieval-Augmented Generation (RAG)
-- Context-aware AI responses
-- Interactive Streamlit web application
-- Modular and scalable project architecture
+* Upload medical reports in PDF format
+* Extract text from PDF documents
+* Split documents into semantic chunks
+* Generate embeddings using Sentence Transformers
+* Store embeddings in a FAISS vector database
+* Retrieve relevant document context
+* Generate AI-powered answers using Groq Llama 3
+* Interactive Streamlit-based user interface
 
 ---
 
-# Technology Stack
+## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3.11 | Programming Language |
-| Streamlit | User Interface |
-| PyPDF | PDF Text Extraction |
-| LangChain | Text Chunking and RAG Pipeline |
-| Sentence Transformers | Embedding Generation |
-| FAISS | Vector Database |
-| Groq API (Llama 3) | Large Language Model |
-| Git & GitHub | Version Control |
-
----
-
-# System Architecture
-
-```
-                User
-                  │
-                  ▼
-         Streamlit Web Interface
-                  │
-                  ▼
-         Upload Medical Report
-                  │
-                  ▼
-          PDF Text Extraction
-                  │
-                  ▼
-      Recursive Text Chunking
-                  │
-                  ▼
-      Sentence Transformer Model
-                  │
-                  ▼
-        FAISS Vector Database
-                  │
-                  ▼
-       Semantic Similarity Search
-                  │
-                  ▼
-        Groq Llama 3 API
-                  │
-                  ▼
-      AI Generated Response
-```
+| Technology            | Usage               |
+| --------------------- | ------------------- |
+| Python 3.11           | Backend Development |
+| Streamlit             | Web Interface       |
+| LangChain             | RAG Pipeline        |
+| PyPDF                 | PDF Processing      |
+| Sentence Transformers | Text Embeddings     |
+| FAISS                 | Vector Database     |
+| Groq API (Llama 3)    | Answer Generation   |
+| Git & GitHub          | Version Control     |
 
 ---
 
-# Project Structure
+## 📁 Project Structure
 
-```
+```text
 MediRAG-Medical-Report-QA-System
 │
 ├── app.py
-├── README.md
 ├── requirements.txt
+├── README.md
 ├── .gitignore
 ├── .env.example
 │
-├── utils
-│   ├── __init__.py
+├── utils/
 │   ├── pdf_loader.py
 │   ├── chunking.py
 │   ├── embeddings.py
 │   ├── vectorstore.py
 │   └── rag.py
 │
-├── uploads
-│
-├── screenshots
-│
-└── sample_reports
+├── screenshots/
+└── sample_reports/
 ```
 
 ---
 
-# Installation Guide
+## 🚀 Getting Started
 
-## Clone the Repository
+Clone the repository.
 
 ```bash
 git clone https://github.com/Abishri-k/MediRAG-Medical-Report-QA-System.git
 ```
 
-## Navigate to the Project Directory
+Navigate to the project.
 
 ```bash
 cd MediRAG-Medical-Report-QA-System
 ```
 
-## Create a Virtual Environment
+Create a virtual environment.
 
 ```bash
 python -m venv .venv
 ```
 
-## Activate the Virtual Environment
+Activate the environment.
 
-### Windows
+**Windows**
 
 ```bash
 .venv\Scripts\activate
 ```
 
-### Linux / macOS
+**Linux/macOS**
 
 ```bash
 source .venv/bin/activate
 ```
 
-## Install Required Packages
+Install dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Configure Environment Variables
+Create a `.env` file.
 
-Create a file named `.env`
-
-```
+```text
 GROQ_API_KEY=YOUR_GROQ_API_KEY
 ```
 
-## Run the Application
+Run the application.
 
 ```bash
 streamlit run app.py
@@ -170,73 +114,55 @@ streamlit run app.py
 
 ---
 
-# Application Workflow
+## 🔄 Workflow
 
-1. Upload a PDF medical report.
-2. Extract text from the uploaded document.
-3. Split the extracted text into smaller overlapping chunks.
-4. Generate embeddings using Sentence Transformers.
-5. Store embeddings in the FAISS vector database.
-6. Accept user questions in natural language.
-7. Retrieve the most relevant document chunks.
-8. Generate context-aware answers using Groq Llama 3.
-9. Display the response through the Streamlit interface.
-
----
-
-# Screenshots
-
-### Home Screen
-
-*(Add Home Screen Screenshot)*
-
-### PDF Upload
-
-*(Add Upload Screen Screenshot)*
-
-### Dashboard
-
-*(Add Dashboard Screenshot)*
-
-### AI Generated Response
-
-*(Add Response Screenshot)*
+```text
+PDF Upload
+     │
+     ▼
+Text Extraction
+     │
+     ▼
+Text Chunking
+     │
+     ▼
+Embedding Generation
+     │
+     ▼
+FAISS Vector Store
+     │
+     ▼
+Semantic Retrieval
+     │
+     ▼
+Groq Llama 3
+     │
+     ▼
+Generated Answer
+```
 
 ---
 
-# Future Enhancements
+## 📸 Application Preview
 
-- Optical Character Recognition (OCR) for scanned medical reports
-- Support for DOCX and image-based reports
-- Cloud deployment
-- User authentication
-- Chat history
-- Multi-language support
-- Medical knowledge base integration
-- Mobile-friendly interface
+Add screenshots of:
+
+* Home Page
+* PDF Upload
+* Dashboard
+* AI Generated Answer
 
 ---
 
-# Academic Information
+## 🔮 Future Scope
 
-**Course:** Software Development Using Generative AI
+* OCR support for scanned reports
+* Multi-language support
+* Cloud deployment
+* Conversation history
+* User authentication
+* Support for additional document formats
 
-**Project Title:** MediRAG: AI-Powered Medical Report Question Answering System Using Retrieval-Augmented Generation (RAG)
+## 📄 License
 
----
-
-# Author
-
-**Abishri K**
-
-B.Tech Electronics and Communication Engineering
-
-Specialization: Biomedical Engineering
-
-Vellore Institute of Technology (VIT)
-
----
-
-# License
-
-This project has been developed solely for academic and educational purposes as part of the Software Development Using Generative AI course at VIT University.
+This project was developed for academic and educational purposes as part of the **Software Development Using Generative AI** course.
